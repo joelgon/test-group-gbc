@@ -1,33 +1,21 @@
-# Getting Started with Create React App
+# Back-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+create a Schema in a mysql database and name group-gbc, this name is mandatory
 
-## Available Scripts
+## check the .env.example file
 
-In the project directory, you can run:
+create a .env file exactly the same as .env.example and apply your connection information
 
-### `yarn start`
+### `installing the dependencies`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+run the command yarn or npm install
+### `migrations`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+to create tables and also populates run the command `yarn typeorm migration:run -c db1Connection`
 
-### `yarn test`
+### `start the project`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+start the backend with the command `yarn dev` or `yarn start`, if you prefer use `npm run start` or `npm run dev`
 
 ### `yarn eject`
 
