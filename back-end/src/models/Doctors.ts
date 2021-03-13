@@ -36,7 +36,10 @@ export class Doctors {
   @DeleteDateColumn({ type: 'timestamp', name: 'deletedAt', nullable: true })
   deletedAt: Date | null;
 
-  @OneToMany(() => Doctorspecialty, doctorspecialty => doctorspecialty.doctor)
+  @OneToMany(() => Doctorspecialty, doctorspecialty => doctorspecialty.doctor, {
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+  })
   doctorspecialties: Doctorspecialty[];
 
   constructor() {

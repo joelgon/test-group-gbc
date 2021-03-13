@@ -1,11 +1,15 @@
 import { Application } from 'express';
 import { Connection } from 'typeorm';
 import { DoctorsController } from '../controllers/DoctorsController';
+import { SpecialtiesController } from '../controllers/SpecialtiesController';
 
 export default class Routes {
   private DoctorsController: DoctorsController;
+  private SpecialtiesController: SpecialtiesController;
+
   constructor(connection: Connection) {
     this.DoctorsController = new DoctorsController(connection);
+    this.SpecialtiesController = new SpecialtiesController(connection);
   }
 
   routes = (server: Application): void => {
@@ -19,5 +23,16 @@ export default class Routes {
       .get(this.DoctorsController.show)
       .put(this.DoctorsController.update)
       .delete(this.DoctorsController.softDelete);
+
+    server
+      .route('/specialties')
+      .get(this.SpecialtiesController.index)
+      .post(this.SpecialtiesController.create);
+
+    server
+      .route('/:id/specialties')
+      .get(this.SpecialtiesController.show)
+      .put(this.SpecialtiesController.update)
+      .delete(this.SpecialtiesController.delete);
   };
 }

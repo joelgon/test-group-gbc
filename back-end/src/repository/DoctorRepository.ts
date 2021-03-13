@@ -1,5 +1,6 @@
 import { Connection, Repository } from 'typeorm';
 import { Doctors } from '../models/Doctors';
+import { Doctorspecialty } from '../models/Doctorspecialty';
 import { Specialties } from '../models/Specialties';
 
 export interface IDoctorReq {
@@ -24,9 +25,11 @@ interface IDoctor {
 
 export class DoctorRepository {
   private Doctors: Repository<Doctors>;
+  private Doctorspecialty: Repository<Doctorspecialty>;
 
   constructor(connection: Connection) {
     this.Doctors = connection.getRepository(Doctors);
+    this.Doctorspecialty = connection.getRepository(Doctorspecialty);
   }
 
   findAll = async (): Promise<IDoctor[]> => {
@@ -127,7 +130,21 @@ export class DoctorRepository {
 
   softDelete = async (id: number): Promise<void> => {
     try {
-      await this.Doctors.softDelete(id);
+      const [, flag] = await Promise.all([
+        this.Doctors.softDelete(id),
+
+        this.Doctorspecialty.find({
+          where: {
+            doctorId: id,
+          },
+        }),
+      ]);
+
+      await Promise.all(
+        flag.map(async f => {
+          this.Doctorspecialty.softDelete(f.id);
+        }),
+      );
     } catch (error) {
       throw new Error(error);
     }

@@ -53,4 +53,12 @@ export class DoctorspecialtyRepository {
       throw new Error(error);
     }
   };
+
+  deleteBy = async (id: string): Promise<void> => {
+    try {
+      await this.Doctorspecialty.softDelete(id);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 }

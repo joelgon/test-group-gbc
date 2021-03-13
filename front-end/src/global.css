@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button:focus {outline:0;}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 100, 0, 1);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 100, 0, 0.7);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 100, 0, 1);
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+}
+
+.button-green {
+  width: 100%;
+  border: 1px solid #7CFC00;
+  background-color: #7CFC00;
+  border-radius: 30px;
+  color: #FFF;
+  font-weight: 900;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.icon {
+  width: auto;
+  height: 20px;
+  cursor: pointer;
+}
+
+.label-float {
+  margin-top: 0px;
+  padding-top: 0px;
+  text-align: start;
+  position: relative;
+  margin-top: 30px;
+}
+
+.label-float input {
+  outline: none;
+  /* min-width: 250px; */
+  position: relative;
+  top: 0;
+  width: calc(100% - 40px);
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  -webkit-appearance: none;
+  transition: all 0.1s linear;
+  border: 1.5px solid #7CFC00;
+  background-color: transparent;
+  -moz-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+}
+
+.label-float input::placeholder {
+  color: transparent;
+}
+
+.label-float input:required:invalid + label:after {
+  content: "*";
+}
+
+.label-float label {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  transform: translateY(-50%);
+  padding: 5px;
+  color: #7CFC00;
+  font-size: 22px;
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  transition: all 0.1s linear;
+  background-color: #FFF;
+  -moz-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label {
+  font-size: 22px;
+  /* top: 0; */
+}
+
+.button-delete {
+  width: 40%;
+  height: 30px;
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 30px;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button-update {
+  width: 40%;
+  height: 30px;
+  border: 1px solid #006400;
+  background-color: #006400;
+  border-radius: 30px;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.between-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

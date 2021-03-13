@@ -1,0 +1,83 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F8F8FF;
+}
+
+.dash {
+  width: 90px;
+  height: 100vh;
+  background-color: #006400;
+  position: absolute;
+}
+
+.handler-component {
+  width: calc(100vw - 100px);
+  height: 100vh;
+  margin-left: 100px;
+}
+
+.options{
+  margin-top: 20px;
+  width: 100%;
+  height: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.options li a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 900;
+  color: #FFF;
+}
+
+.doctor-modal-main {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(169, 169, 169, 0.5);
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctor-modal {
+  width: 60%;
+  height: 80%;
+  background-color: #FFF;
+}
+
+.close-doctor{
+  width: calc(100% - 20px);
+  height: 25px;
+  background-color: #006400;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-doctor p {
+  color: #FFF;
+  font-weight: bolder;
+}
+
+.doctor-modal-body {
+  padding: 0 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 25px);
+}
+
+.buttons {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

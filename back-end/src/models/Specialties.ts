@@ -30,6 +30,10 @@ export class Specialties {
   @OneToMany(
     () => Doctorspecialty,
     doctorspecialty => doctorspecialty.specialty,
+    {
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+    },
   )
   doctorspecialties: Doctorspecialty[];
 
